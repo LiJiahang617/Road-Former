@@ -11,7 +11,7 @@ If you find our works useful in your research, please consider citing:
 ```
 @article{li2024roadformer,
   title={RoadFormer: Duplex transformer for RGB-normal semantic road scene parsing},
-  author={Li, Jiahang and Zhan, Yikang and Yun, Peng and Zhou, Guangliang and Chen, Qijun and Fan, Rui},
+  author={Li, Jiahang and Zhang, Yikang and Yun, Peng and Zhou, Guangliang and Chen, Qijun and Fan, Rui},
   journal={IEEE Transactions on Intelligent Vehicles},
   year={2024},
   publisher={IEEE},

@@ -35,3 +35,23 @@ If you find our works useful in your research, please consider citing:
   note={{DOI}:{10.1109/TIV.2024.3448251}},
 }
 ```
+## Usage 
+
+### Installation
+
+```bash
+git clone https://github.com/LiJiahang617/Road-Former.git
+cd Road-Former
+```
+Please refer to [MMSegmentation](https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/get_started.md#installation) for the dependency instructions.
+You will need a compiled ``.so`` file, or you can download the pre-compiled file from here:
+- [_ext.cpython-38-x86_64-linux-gnu.so](https://pan.baidu.com/s/1yg52J4umKiPLVVDeFwLfBA?pwd=apei)
+
+### Running
+
+```bash
+python tools/train.py --config <config-file-path>
+python tools/test.py --config <config-file-path> --pretrained <pre-trained-pth-path>
+```
+For more training and inference details, please refer to MMSegmentation [instructions](https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/user_guides/4_train_test.md).
+

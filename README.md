@@ -23,4 +23,12 @@ If you find our works useful in your research, please consider citing:
   publisher={IEEE},
   note={{DOI}:{10.1109/TIV.2024.3388726}},
 }
+
+@article{huang2024roadformer+,
+  title={RoadFormer+: Delivering RGB-X Scene Parsing through Scale-Aware Information Decoupling and Advanced Heterogeneous Feature Fusion},
+  author={Huang, Jianxin and Li, Jiahang and Jia, Ning and Sun, Yuxiang and Liu, Chengju and Chen, Qijun and Fan, Rui},
+  journal={IEEE Transactions on Intelligent Vehicles},
+  note={{DOI}:{10.1109/TIV.2024.3448251}},
+  year={2024}
+}
 ```

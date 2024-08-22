@@ -47,6 +47,7 @@ Please refer to [MMSegmentation](https://github.com/open-mmlab/mmsegmentation/bl
 You will need a compiled ``.so`` file, or you can download the pre-compiled file from here:
 - [_ext.cpython-38-x86_64-linux-gnu.so](https://pan.baidu.com/s/1yg52J4umKiPLVVDeFwLfBA?pwd=apei)
 
+This file is complied using the NVIDIA RTX 3090 GPU, which may cause error when under other devices.
 ### Running
 
 ```bash

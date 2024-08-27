@@ -14,6 +14,7 @@ Offical RoadFormer series scene parsing networks implementation based on mmsegme
 - [2024/07/17]: Our series of works, RoadFormer and RoadFormer+, are nearing completion. Upon finalizing the organization of the code, we will release it. Stay tuned for updates!
 - [2024/08/21]: Our paper RoadFormer+ has been accepted by the IEEE T-IV 2024 😊😊😊. Stay tuned for our code!
 - [2024/08/22]: The implementation of our RoadFormer series, has been released, the utilized SYN-UDTIRI will be released soon.
+- [2024/08/27]: Our SYN-UDTIRI dataset is now available on [BaiDu Cloud](https://pan.baidu.com/s/1oVlf13QvmhYviiRx1kfODw?pwd=sx8j), it includes the train, val, test sets of the datasets. It's about 60 GB in total, considering the test set is too large (refer to our RoadFormer paper; the test set contains 3000+ images), we plan to construct a smaller test and deploy it on our online benchmark: [UDTIRI](http://43.142.249.46:28083/login?redirect=%2FnewCoco%2F). Please refer to this site for more details about our UDTIRI benchmark.
 
 ## Citation
 If you find our works useful in your research, please consider citing:

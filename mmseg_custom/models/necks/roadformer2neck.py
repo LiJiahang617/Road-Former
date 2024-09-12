@@ -295,13 +295,12 @@ class RoadFormer2Neck(BaseModule):
             enhance_blocks.append(enhance_block)
         self.enhance_blocks = ModuleList(enhance_blocks)
         self.img_scale = list(img_scale)
-        qkvchannels = 32
         self.global_feature_encoder_rgb = ModuleList([
-            GFE(dim=ch // 2, num_heads=8, ffn_expansion_factor=2, qkv_bias=False,groups= qkvchannels)
+            GFE(dim=ch // 2, num_heads=8, ffn_expansion_factor=2, qkv_bias=False,groups= 32)
             for ch in self.in_channels1
         ])        
         self.global_feature_encoder_sne = ModuleList([
-            GFE(dim=ch // 2, num_heads=8, ffn_expansion_factor=2, qkv_bias=False,groups= qkvchannels)
+            GFE(dim=ch // 2, num_heads=8, ffn_expansion_factor=2, qkv_bias=False,groups= 32)
             for ch in self.in_channels1
         ])       
         self.local_eature_encoder_rgb = ModuleList([

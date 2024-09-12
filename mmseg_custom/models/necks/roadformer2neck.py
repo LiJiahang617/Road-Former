@@ -223,12 +223,12 @@ class GFFM(nn.Module):
         qy = y.view(batch_size, channels, -1)
         ky = y.view(batch_size, channels, -1).permute(0, 2, 1)
         vy = y.view(batch_size, channels, -1)
-        energy_x = torch.bmm(vx, kx)
-        energy_y = torch.bmm(vy, ky)
+        energy_x = torch.bmm(qx, ky)
+        energy_y = torch.bmm(qy, kx)
         attention_x = F.softmax(energy_x, dim=-1)
         attention_y = F.softmax(energy_y, dim=-1)
-        outx = torch.bmm(attention_y, qx)
-        outy = torch.bmm(attention_x, qy)
+        outx = torch.bmm(attention_x, vy)
+        outy = torch.bmm(attention_y, vx)
         outx = outx.view(batch_size, channels, height, width)
         outy = outy.view(batch_size, channels, height, width)
         outx = self.gammax(outx) + x
@@ -295,8 +295,6 @@ class RoadFormer2Neck(BaseModule):
             enhance_blocks.append(enhance_block)
         self.enhance_blocks = ModuleList(enhance_blocks)
         self.img_scale = list(img_scale)
-        qkvchannels = 64
-        qkvchannels = 128
         qkvchannels = 32
         self.global_feature_encoder_rgb = ModuleList([
             GFE(dim=ch // 2, num_heads=8, ffn_expansion_factor=2, qkv_bias=False,groups= qkvchannels)

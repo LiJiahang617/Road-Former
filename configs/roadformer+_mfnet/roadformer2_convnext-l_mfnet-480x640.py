@@ -143,10 +143,23 @@ model = dict(
             sampler=dict(type='mmdet_custom.MaskPseudoSampler')
             )
     ),
+    auxiliary_head=dict(
+        type='FCNHead',
+        in_channels=1536,
+        in_index=2,
+        channels=256,
+        num_convs=1,
+        concat_input=False,
+        dropout_ratio=0,
+        num_classes=9,
+        norm_cfg=dict(type='GN', num_groups=32),
+        align_corners=False,
+        loss_decode=dict(
+            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     train_cfg=dict(),
     test_cfg=dict(mode='whole'))
 optimizer = dict(
-    type='AdamW', lr=0.0001, weight_decay=0.05, eps=1e-8, betas=(0.9, 0.999))
+    type='AdamW', lr=0.0002, weight_decay=0.05, eps=1e-8, betas=(0.9, 0.999))
 optim_wrapper = dict(
     type='OptimWrapper',
     optimizer=optimizer,
@@ -155,7 +168,7 @@ optim_wrapper = dict(
         custom_keys=dict(backbone=dict(lr_mult=0.1, decay_mult=1.0)),
         norm_decay_mult=0.0)
     )
-max_epochs = 200
+max_epochs = 400
 param_scheduler = [
     dict(
         type='LinearLR', start_factor=1e-6, end_factor=1, by_epoch=False, begin=0, end=1500),   

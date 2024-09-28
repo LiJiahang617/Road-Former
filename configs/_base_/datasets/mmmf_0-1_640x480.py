@@ -6,11 +6,13 @@ train_pipeline = [
     dict(type='StackByChannel', keys=('img', 'ano')),
     dict(type='LoadAnnotations', reduce_zero_label=False),
     dict(
-        type='Resize',
-        scale=sample_scale),
+        type='RandomChoiceResize',
+        scales=[int(640 * x * 0.1) for x in range(4, 25)],
+        resize_type='ResizeShortestEdge',
+        max_size=1280),  # Note: w, h instead of h, w
     dict(type='RandomCrop', crop_size=(480, 640), cat_max_ratio=0.75),
     dict(type='RandomFlip', prob=0.5),
-    dict(type='MultiModalPhotoMetricDistortion'),
+    dict(type='MultiModalPhotoMetricDistortion', to_float32=True),
     dict(type='PackSegInputs')
 ]
 val_pipeline = [

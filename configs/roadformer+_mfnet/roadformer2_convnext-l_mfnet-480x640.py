@@ -159,7 +159,7 @@ model = dict(
     train_cfg=dict(),
     test_cfg=dict(mode='whole'))
 optimizer = dict(
-    type='AdamW', lr=0.0002, weight_decay=0.05, eps=1e-8, betas=(0.9, 0.999))
+    type='AdamW', lr=0.0001, weight_decay=0.05, eps=1e-8, betas=(0.9, 0.999))
 optim_wrapper = dict(
     type='OptimWrapper',
     optimizer=optimizer,
